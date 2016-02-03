@@ -1,10 +1,13 @@
-# [Data Submarine - Data Analysis](http://www.datasubmarine.com)
+# [Data Submarine | Statistically Intelligent](http://www.datasubmarine.com)
 
-We are specialized in Data Analytics and BI. Our ambition is to present you Data - Driven information turned into Insights to help you in the process for Decision Making.
+In Data Submarine we inspect, clean, transform and model your Data with the goal of discovering useful information that would help you in the process of Decision-Making.
+As we always repeat in Data Submarine knowing how to properly handle the data analysis will allow you to get the most from your data and make the right decisions.
 
-We inspect, clean, transform and model your Data with the goal of discovering useful information that would help you in the process of Decision-Making. As we always repeat in Data Submarine knowing how to properly handle the data analysis will allow you to get the most from your data and make the right decisions.
+Contact Information:
 
-No matter how small, big, complex, simple or structured your Data might be we will run a series of statistical algorithms that in combination with powerful software we use will give you the Insights you need for your business/project to go forward. Adequate Data management is the future of all businesses.
+info@datasubmarine.com
+
+Dubai, UAE.
 
 Visit the project's website at <http://www.datasubmarine.com>.
 
@@ -39,7 +42,7 @@ Runing the app
 Execute in R:
 
 ```R
-shiny::runGitHub(repo = 'DataSubmarine', username = 'guzmanlopez', subdir = 'OurWork/ShinyApp_Example01.dev')
+shiny::runGitHub(repo = 'datasub-example-01', username = 'Data-Submarine')
 ```
 
 * Follow Data Submarine on  [Facebook](https://www.facebook.com/Data-Submarine-1688944524675846/) and [Linkedin](http://linkedin.com/).
