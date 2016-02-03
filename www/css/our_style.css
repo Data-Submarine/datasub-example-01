@@ -1,0 +1,29 @@
+/***********************************************/
+/***************** Our Style *******************/
+/***********************************************/
+
+body {
+  color:;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+/********** Fonts ************/
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre {}
+
+/********** Navigation ************/
+
+.navbar-fixed-top {
+  top: 2px;
+}
+.container-fluid {
+  margin-top: 75px;
+}
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0px;
+}
