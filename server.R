@@ -30,18 +30,39 @@ shinyServer(function(input, output) {
     
   })
   
+  
   # Index3
   output$plot3 <- renderPlotly({
     
     # size of the bins depend on the input 'bins'
-    size <- input$bins3
-    
-    gg <- ggplot(iris, aes(x = Petal.Width)) +
-      geom_histogram(aes(y = ..density..), bins = size)
+
+    gg <- ggplot(mpg, aes(displ, hwy, colour = class)) +
+      geom_point() +
+      geom_smooth(se = FALSE, method = "lm")
+    ggplot(mpg, aes(displ, hwy)) +
+      geom_point() +
+      geom_smooth(span = 0.8) +
+      facet_wrap(~drv)
     
     # Convert the ggplot to a plotly
     p <- ggplotly(gg)    
     p
     
   })
+  
+  # Index4
+  output$plot4 <- renderPlotly({
+    
+    # size of the bins depend on the input 'bins'
+    size <- input$bins3
+    
+    gg <- ggplot(iris, aes(x = Petal.Width)) +
+      geom_histogram(aes(y = ..density.., fill = Petal.Length), bins = size)
+    
+    # Convert the ggplot to a plotly
+    p <- ggplotly(gg)    
+    p
+    
+  })
+  
 })
