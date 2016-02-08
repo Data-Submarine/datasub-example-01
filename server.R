@@ -1,5 +1,6 @@
 # Libraries
 library('shiny')
+library('leaflet')
 library('ggplot2')
 library('googleVis')
 library('plotly')
@@ -10,26 +11,19 @@ data("Fruits")
 
 # Shiny Server
 shinyServer(function(input, output) {
-  # Index1
+  
+  # Index1 - Time Series
   output$plot1 <- renderGvis({
     
     gvisBubbleChart(Fruits, idvar="Fruit", xvar="Sales", yvar="Expenses", sizevar="Profit", options=list(colorAxis="{colors: ['lightblue', 'blue']}"))
     
   })
   
-  # Index2
-  output$plot2 <- renderPlot({
-    
-    # size of the bins depend on the input 'bins'
-    size <- input$bins2
-    
-    gg <- ggplot(iris, aes(x = Petal.Length)) +
-      geom_histogram(aes(y = ..density..), bins = size)
-    
-    return(gg)
-    
+  # Index2 - Map
+  output$mymap <- renderLeaflet({
+    map = leaflet() %>% addTiles() %>% setView(lat = 25.0779, lng = 55.1386, zoom = 14) %>%
+    addMarkers(lat = 25.079791, lng = 55.135020, popup="Nice, this is popuping! Tengo que sacarle el box...")
   })
-  
   
   # Index3
   output$plot3 <- renderPlotly({
