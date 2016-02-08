@@ -74,6 +74,7 @@
   <script src="leaflet/data-example.js"></script>
 
 </head>
+
 <body>
   <header>
     <!-- Navigation -->
@@ -117,16 +118,21 @@
         <div class="panel-body">
           <div class="text-left">
             <div class="form-group shiny-input-container">
-              <label class="control-label" for="years">Year:</label>
+              <label class="control-label" for="years">Year</label>
               <input class="js-range-slider" id="years" data-type="single" data-min="2010" data-max="2016" data-from="2008" data-to="2012" data-step="1" data-grid="true" data-grid-num="5" data-grid-snap="true" data-prettify-separator="" data-keyboard="true" data-keyboard-step="6.6666666666666"
                 data-drag-interval="false" data-data-type="number" />
             </div>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="radius">Point radius</label>
+            <input class="js-range-slider" id="radius" data-min="1" data-max="50" data-from="10" data-step="1" data-grid="false" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="2.04081632653061" data-drag-interval="true"
+              data-data-type="number" />
           </div>
         </div>
       </div>
       <div class="main col-lg-10">
         <h3>Heatmap</h3>
-        <div id="map"></div>
+        
         <div id="divHtml" class="shiny-html-output"></div>
       </div>
     </div>
