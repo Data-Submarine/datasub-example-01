@@ -20,7 +20,6 @@ R packages dependencies
 
 ```R
 library('shiny')
-library('leaflet')
 library('ggplot2')
 library('googleVis')
 library('plotly')
@@ -30,7 +29,6 @@ To install the requiered packages you can execute in R:
 
 ```R
 install.packages('shiny')
-install.packages('leaflet')
 install.packages('ggplot2')
 install.packages('googleVis')
 install.packages('plotly')

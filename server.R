@@ -1,6 +1,5 @@
 # Libraries
 library('shiny')
-library('leaflet')
 library('ggplot2')
 library('googleVis')
 library('plotly')
