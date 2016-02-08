@@ -117,22 +117,40 @@
       <div class="side col-lg-2">
         <div class="panel-body">
           <div class="text-left">
+            <h4>Data visualization</h4>
             <div class="form-group shiny-input-container">
               <label class="control-label" for="years">Year</label>
               <input class="js-range-slider" id="years" data-type="single" data-min="2010" data-max="2016" data-from="2008" data-to="2012" data-step="1" data-grid="true" data-grid-num="5" data-grid-snap="true" data-prettify-separator="" data-keyboard="true" data-keyboard-step="6.6666666666666"
                 data-drag-interval="false" data-data-type="number" />
             </div>
           </div>
+          <hr/>
+          <h4>Heatmap options</h4>
+
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="color">Color palette</label>
+            <div>
+              <select id="color">
+                <option value="" selected>spectral</option>
+                <option value=", gradient: {0: &#39;#f7f7f7&#39;, 0.25: &#39;#ffb6b6&#39;, 0.5: &#39;#f98a8a&#39;, 0.75: &#39;#ff4a4a&#39;, 1: &#39;#FF0000&#39;}" selected>heat</option>
+                <option value=", gradient: {0.25: &#39;#78C0E0&#39;, 0.4: &#39;#449DD1&#39;, 0.5: &#39;#192BC2&#39;, 0.75: &#39;#0E0E52&#39;}" selected>cold</option>
+              </select>
+              <script type="application/json" data-for="color" data-nonempty="">
+                {}
+              </script>
+            </div>
+          </div>
+
           <div class="form-group shiny-input-container">
             <label class="control-label" for="radius">Point radius</label>
-            <input class="js-range-slider" id="radius" data-min="1" data-max="50" data-from="10" data-step="1" data-grid="false" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="2.04081632653061" data-drag-interval="true"
+            <input class="js-range-slider" id="radius" data-min="1" data-max="25" data-from="10" data-step="1" data-grid="false" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="2.04081632653061" data-drag-interval="true"
               data-data-type="number" />
           </div>
         </div>
       </div>
       <div class="main col-lg-10">
-        <h3>Heatmap</h3>
-        
+        <h3>Dubai Marina</h3>
+        <h4>Short description here</h4>
         <div id="divHtml" class="shiny-html-output"></div>
       </div>
     </div>

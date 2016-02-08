@@ -31,6 +31,7 @@ shinyServer(function(input, output) {
   output$divHtml <- renderUI({
     
     radius <- input$radius
+    colorGradient <- input$color
     
     mapa <- HTML(
       paste(
@@ -48,9 +49,10 @@ shinyServer(function(input, output) {
         return [p[0], p[1]];
         });
         
-        var heat = L.heatLayer(addressPoints, {radius:", radius, "}).addTo(map);
+        var heat = L.heatLayer(addressPoints, {radius:", radius, colorGradient, "}).addTo(map);
         
         </script>"
+        
       ), sep = ""
       )
     
