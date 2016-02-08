@@ -39,7 +39,7 @@ mapa <- HTML("
     return [p[0], p[1]];
   });
 
-  var heat = L.heatLayer(addressPoints).addTo(map);
+  var heat = L.heatLayer(addressPoints, {radius: 10}).addTo(map);
 
 </script>")
 
