@@ -9,6 +9,7 @@ library('plotly')
 data("iris")
 data("Fruits")
 
+
 # Shiny Server
 shinyServer(function(input, output) {
   
@@ -20,10 +21,32 @@ shinyServer(function(input, output) {
   })
   
   # Index2 - Map
-  output$mymap <- renderLeaflet({
-    map = leaflet() %>% addTiles() %>% setView(lat = 25.0779, lng = 55.1386, zoom = 14) %>%
-    addMarkers(lat = 25.079791, lng = 55.135020, popup="Nice, this is popuping! Tengo que sacarle el box...")
-  })
+#   output$mymap <- renderLeaflet({
+#     map = leaflet() %>% addTiles() %>% setView(lat = 25.0779, lng = 55.1386, zoom = 14) %>%
+#     addMarkers(lat = 25.079791, lng = 55.135020, popup="Nice, this is popuping! Tengo que sacarle el box...")
+#   })
+  
+output$divHtml <- renderUI({
+
+mapa <- HTML("
+<script>
+
+  var map = L.map('map').setView([25.0779, 55.1386], 14);
+
+  var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  }).addTo(map);
+
+  addressPoints = addressPoints.map(function(p) {
+    return [p[0], p[1]];
+  });
+
+  var heat = L.heatLayer(addressPoints).addTo(map);
+
+</script>")
+
+return(mapa)
+
+})
   
   # Index3
   output$plot3 <- renderPlotly({

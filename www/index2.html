@@ -57,18 +57,24 @@
   <script src="htmlwidgets/lib/plotlyjs/plotly-latest.min.js"></script>
   <script src="htmlwidgets/plotly.js"></script>
 
-<!-- Leaflet -->
+  <!-- Leaflet -->
+  <!--
   <link href="leaflet/leaflet.css" rel="stylesheet">
   <script src="leaflet/leaflet.js"></script>
   <script src="leaflet/leaflet(1).js"></script>
   <link href="leaflet/leafletfix.css" rel="stylesheet">
   <script src="leaflet/leaflet-providers.js"></script>
   <script src="leaflet/leaflet-providers-plugin.js"></script>
-  <script src="leaflet/leaflet-heatmap.js"></script>
+-->
+  <!-- <script src="leaflet/leaflet-heatmap.js"></script> -->
+
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script src="leaflet/leaflet-heat.js"></script>
+  <script src="leaflet/data-example.js"></script>
 
 </head>
 <body>
-
   <header>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -104,33 +110,28 @@
       </div>
     </nav>
   </header>
-
   <div class="container-fluid">
-
-    <!-- TimeSeries -->
+    <!-- Heatmap -->
     <div class="row border-between">
-      <div class="col-lg-3">
+      <div class="side col-lg-2">
         <div class="panel-body">
           <div class="text-left">
             <div class="form-group shiny-input-container">
               <label class="control-label" for="years">Year:</label>
-              <input class="js-range-slider" id="years" data-type="double" data-min="2005" data-max="2015" data-from="2008" data-to="2012" data-step="1" data-grid="true" data-grid-num="5" data-grid-snap="true" data-prettify-separator="" data-keyboard="true" data-keyboard-step="6.6666666666666"
-                data-drag-interval="true" data-data-type="number" />
+              <input class="js-range-slider" id="years" data-type="single" data-min="2010" data-max="2016" data-from="2008" data-to="2012" data-step="1" data-grid="true" data-grid-num="5" data-grid-snap="true" data-prettify-separator="" data-keyboard="true" data-keyboard-step="6.6666666666666"
+                data-drag-interval="false" data-data-type="number" />
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-9">
-          <h3>Map</h3>
-          <div id="mymap" style="width:100%; height:400px" class="leaflet html-widget html-widget-output"></div>
-          <!-- <div id="plot2" class="shiny-plot-output" style="width: 100%; height: 400px"></div> -->
+      <div class="main col-lg-10">
+        <h3>Heatmap</h3>
+        <div id="map"></div>
+        <div id="divHtml" class="shiny-html-output"></div>
       </div>
     </div>
-
   </div>
-
 </body>
-
 <footer></footer>
 
 </html>
