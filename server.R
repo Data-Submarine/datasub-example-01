@@ -8,10 +8,12 @@ library('plotly')
 data("iris")
 data("Fruits")
 
+# Point data from Dubai Marina
+df <-
+  read.table("www/data/datosBuildingsXYZ.csv", header = TRUE, sep = ",")
 
 # Shiny Server
 shinyServer(function(input, output) {
-  
   # Index1 - Time Series
   output$plot1 <- renderGvis({
     gvisBubbleChart(
@@ -29,36 +31,38 @@ shinyServer(function(input, output) {
   
   
   output$divHtml <- renderUI({
-    
     radius <- input$radius
     colorGradient <- input$color
     
-    mapa <- HTML(
-      paste(
-        "
-        <div id='map'></div>
-
-        <script>
-        
-        var map = L.map('map').setView([25.0779, 55.1386], 14);
-        
-        var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        }).addTo(map);
-        
-        addressPoints = addressPoints.map(function(p) {
-        return [p[0], p[1]];
-        });
-        
-        var heat = L.heatLayer(addressPoints, {radius:", radius, colorGradient, "}).addTo(map);
-        
-        </script>"
-        
+    dfSubset <-
+      subset(x = df, year == input$years, select = c("lon", "lat", "value"))
+    
+    j <-
+      paste0("[",dfSubset[,"lat"], ",", dfSubset[,"lon"], ",", dfSubset[,"value"], "]", collapse =
+               ",")
+    j <- paste0("[",j,"]")
+    
+    mapa <-
+      HTML(
+        paste(
+          "
+          <div id='map'></div>
+          <script>
+          var map = L.map('map').setView([25.0779, 55.1386], 14);
+          var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);",
+          sprintf("var addressPoints = %s;", j),
+          "addressPoints = addressPoints.map(function(p) {
+          return [p[0], p[1]];
+  });
+          var heat = L.heatLayer(addressPoints, {radius:", radius, colorGradient, "}).addTo(map);
+          </script>"
       ), sep = ""
-      )
+          )
+    
     
     return(mapa)
     
-  })
+          })
   
   # Index3
   output$plot3 <- renderPlotly({
@@ -70,7 +74,7 @@ shinyServer(function(input, output) {
     ggplot(mpg, aes(displ, hwy)) +
       geom_point() +
       geom_smooth(span = 0.8) +
-      facet_wrap( ~ drv)
+      facet_wrap(~ drv)
     
     # Convert the ggplot to a plotly
     p <- ggplotly(gg)
