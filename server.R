@@ -44,7 +44,7 @@ shinyServer(function(input, output) {
           "
           <div id='map'></div>
           <script>
-          var map = L.map('map').setView([25.0779, 55.1386], 15);
+          var map = L.map('map').setView([25.0779, 55.1386], 14);
           var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);",
           sprintf("var addressPoints = %s;", j),
           "addressPoints = addressPoints.map(function(p) {
