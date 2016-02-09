@@ -14,6 +14,7 @@ df <-
 
 # Shiny Server
 shinyServer(function(input, output) {
+  
   # Index1 - Time Series
   output$plot1 <- renderGvis({
     gvisBubbleChart(
@@ -23,16 +24,11 @@ shinyServer(function(input, output) {
     
   })
   
-  # Index2 - Map
-  #   output$mymap <- renderLeaflet({
-  #     map = leaflet() %>% addTiles() %>% setView(lat = 25.0779, lng = 55.1386, zoom = 14) %>%
-  #     addMarkers(lat = 25.079791, lng = 55.135020, popup="Nice, this is popuping! Tengo que sacarle el box...")
-  #   })
-  
-  
+  # Index2 - Heatmap
   output$divHtml <- renderUI({
     radius <- input$radius
     colorGradient <- input$color
+    opacity <- input$opacity
     
     dfSubset <-
       subset(x = df, year == input$years, select = c("lon", "lat", "value"))
@@ -48,17 +44,16 @@ shinyServer(function(input, output) {
           "
           <div id='map'></div>
           <script>
-          var map = L.map('map').setView([25.0779, 55.1386], 14);
+          var map = L.map('map').setView([25.0779, 55.1386], 15);
           var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);",
           sprintf("var addressPoints = %s;", j),
           "addressPoints = addressPoints.map(function(p) {
           return [p[0], p[1]];
   });
-          var heat = L.heatLayer(addressPoints, {radius:", radius, colorGradient, "}).addTo(map);
+          var heat = L.heatLayer(addressPoints, {minOpacity:", opacity,", radius:", radius, colorGradient, "}).addTo(map);
           </script>"
       ), sep = ""
           )
-    
     
     return(mapa)
     
