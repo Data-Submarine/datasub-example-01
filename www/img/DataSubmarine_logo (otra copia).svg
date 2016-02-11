@@ -14,27 +14,27 @@
    viewBox="0 0 109.67669 48.000001"
    id="svg5248"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="DataSubmarine_logo.svg">
   <defs
      id="defs5250" />
   <sodipodi:namedview
      id="base"
-     pagecolor="#c1c1c1"
-     bordercolor="#c3c3c3"
-     borderopacity="1"
-     inkscape:pageopacity="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.5031705"
-     inkscape:cx="56.995684"
-     inkscape:cy="11.330088"
+     inkscape:zoom="3.959798"
+     inkscape:cx="59.67789"
+     inkscape:cy="3.3441887"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="699"
+     inkscape:window-width="1280"
+     inkscape:window-height="745"
      inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-y="30"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -58,22 +58,21 @@
      id="layer1"
      transform="translate(145.93359,-595.31821)">
     <g
-       id="g4153"
-       transform="translate(-2.9857949e-6,6.0517577e-6)">
+       transform="matrix(2.1145712,0,0,2.1145712,-780.44176,-282.44389)"
+       id="g5240">
       <path
          inkscape:connector-curvature="0"
          id="path3488"
-         d="m -143.01366,638.11679 c 0,0 2.26866,-0.0446 7.9385,1.575 4.73761,1.35335 6.50872,1.46654 26.6436,1.70269 l 21.568625,0.25297 0,-8.95561 0,-10.17473 -14.480755,0 -14.48073,7e-5 -1.82375,1.82367 c -1.67022,1.67011 -2.42728,1.8866 -8.99099,2.57017 -3.94198,0.41053 -9.12956,1.19085 -11.52792,1.73404 -2.93636,0.66503 -4.68363,1.04523 -4.84658,0.14337 -0.38563,-2.13426 -0.53814,-4.49167 -1.25944,-6.27125 l -1.66049,0 0,10.17457 0,10.62646 1.66049,0 c 0.52329,-1.56567 0.88897,-3.60062 1.25944,-5.20142 z"
-         style="fill-opacity:1;stroke:none;stroke-width:0.5;stroke-opacity:1" />
+         d="m 301.44556,435.34154 c 0,0 1.07287,-0.0211 3.75419,0.74483 2.24046,0.64001 3.07803,0.69354 12.6,0.80522 l 10.2,0.11963 0,-4.23519 0,-4.81172 -6.84808,0 -6.84807,3e-5 -0.86247,0.86243 c -0.78986,0.78981 -1.14788,0.89219 -4.25192,1.21546 -1.8642,0.19414 -4.31745,0.56316 -5.45166,0.82004 -1.38863,0.3145 -2.21493,0.4943 -2.29199,0.0678 -0.18237,-1.00931 -0.25449,-2.12415 -0.5956,-2.96573 l -0.78526,0 0,4.81165 0,5.02535 0.78526,0 c 0.24747,-0.74042 0.4204,-1.70277 0.5956,-2.4598 z"
+         style="fill-opacity:1" />
       <path
          inkscape:connector-curvature="0"
          id="path3476"
-         d="m -42.604051,639.91435 c 6.278543,-2.13931 8.379877,-8.1384 4.11115,-11.73687 -2.176719,-1.83494 -6.647895,-2.96412 -13.72306,-3.46572 l -6.417364,-0.45497 0,8.43505 0,9.04328 6.593952,-0.42632 c 3.626659,-0.23448 7.87257,-0.86196 9.435322,-1.39445 z"
-         style="fill-opacity:1;stroke:none;stroke-width:0.5;stroke-opacity:1" />
+         d="m 348.93018,436.19162 c 2.96918,-1.0117 3.96292,-3.84872 1.9442,-5.55047 -1.02939,-0.86776 -3.14385,-1.40176 -6.48976,-1.63897 l -3.03483,-0.21516 0,3.98901 0,4.27665 3.11834,-0.20161 c 1.71508,-0.11089 3.72301,-0.40763 4.46205,-0.65945 z"
+         style="fill-opacity:1" />
       <g
-         style="stroke:none;stroke-width:0.22535992;stroke-opacity:1"
          id="g3478"
-         transform="matrix(2.2186732,0,0,2.2186732,-824.52361,-187.29494)">
+         transform="matrix(1.0492308,0,0,1.0492308,-20.846707,44.996808)">
         <rect
            ry="0"
            y="364.50162"
@@ -81,9 +80,9 @@
            height="9.1586742"
            width="3.9068801"
            id="rect3480"
-           style="fill:#52018f;fill-opacity:1;stroke:none;stroke-width:0.22535992;stroke-opacity:1" />
+           style="fill:#52018f;fill-opacity:1;stroke:none" />
         <rect
-           style="fill:#02b176;fill-opacity:1;stroke:none;stroke-width:0.22535992;stroke-opacity:1"
+           style="fill:#02b176;fill-opacity:1;stroke:none"
            id="rect3482"
            width="3.8853571"
            height="13.958579"
@@ -97,7 +96,7 @@
            height="20.89769"
            width="3.8601818"
            id="rect3484"
-           style="fill:#9a013a;fill-opacity:1;stroke:none;stroke-width:0.22535992;stroke-opacity:1" />
+           style="fill:#9a013a;fill-opacity:1;stroke:none" />
       </g>
     </g>
   </g>

@@ -20,7 +20,7 @@
   <link href="font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
   <!-- Personalized Style -->
-  <link href="css/our_style.css" rel="stylesheet" type="text/css">
+  <!-- <link href="css/our_style.css" rel="stylesheet" type="text/css"> -->
 
   <!-- jQuery -->
   <script src="js/libs/jquery-2.1.4.js"></script>
@@ -52,67 +52,99 @@
   <script src="htmlwidgets/lib/plotlyjs/plotly-latest.min.js"></script>
   <script src="htmlwidgets/plotly.js"></script>
 
+  <!-- Plugin CSS cover creative -->
+  <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/creativeTemplate/animate.min.css" type="text/css">
+
+  <!-- Custom CSS cover creative -->
+  <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/creativeTemplate/creative.css" type="text/css">
+
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css" type="text/css">
+
 </head>
 
 <body>
 
-  <header>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#itemsMenu">
-          </button>
-          <a class="navbar-brand" href="index.html">Data Submarine</a>
-        </div>
-        <div id="itemsMenu" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav nav navbar-left" id="menu">
-            <li>
-              <a href="index1.html"><i class="fa fa-clock-o fa-fw"></i> Time Series</a>
-            </li>
-            <li>
-              <a href="index2.html"><i class="fa fa-map-marker"></i> Spatial Analysis</a>
-            </li>
-            <li>
-              <a href="index3.html"><i class="fa fa-database fa-fw"></i> Database</a>
-            </li>
-            <li>
-              <a href="index4.html"><i class="fa fa-comment"></i> About us</a>
-            </li>
-          </ul>
-          <ul class="nav navbar-right nav-stacked">
-            <li>
-              <a href="http://www.datasubmarine.com">
-                <img src="img/DataSubmarine_logo.svg" alt="Data Submarine Logo" class="img-responsive" width="100%">
-              </a>
-            </li>
-          </ul>
-        </div>
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="index.html"> DataSubmarine <img src="img/DataSubmarine_logo.svg" alt="Data Submarine Logo" class="img-responsive" width="100%">
+        </a>
       </div>
-    </nav>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="page-scroll" href="index1.html#timeseries"><i class="fa fa-clock-o fa-fw"></i> Time Series</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="index2.html#spatialanalysis"><i class="fa fa-map-marker"></i> Spatial Analysis</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="index3.html#database"><i class="fa fa-database fa-fw"></i> Database</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="index4.html#aboutus"><i class="fa fa-comment"></i> About us</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <header>
+
+    <div class="header-content">
+      <div class="">
+        <h1>... we Inspect, Clean, Transform and Model your Data</h1>
+        <hr>
+        <p>Get the most from your data and make the right decisions</p>
+        <a href="#aboutus" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+      </div>
+    </div>
   </header>
-  <div class="container-fluid">
 
-    <!-- TimeSeries -->
+  <section class="" id="database">
+    <div class="container-fluid">
 
-    <div class="container">
+      <!-- Database -->
+
       <div class="panel panel-section">
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-12">
               <div class="panel-body">
-                <h1>Petal Width</h1>
-
+                <h2>Database example</h2>
                 <div id="plot3" class="plotly html-widget html-widget-output shiny-html-output" style="width: 100%; height: 400px"></div>
-
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
 
-  </div>
+  </section>
+
+  <!-- Plugin JavaScript cover creative -->
+  <script src="bootstrap-3.3.5-dist/js/creativeTemplate/jquery.easing.min.js"></script>
+  <script src="bootstrap-3.3.5-dist/js/creativeTemplate/jquery.fittext.js"></script>
+  <script src="bootstrap-3.3.5-dist/js/creativeTemplate/wow.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="bootstrap-3.3.5-dist/js/creativeTemplate/creative.js"></script>
 
 </body>
 
