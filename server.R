@@ -3,6 +3,7 @@ library('shiny')
 library('ggplot2')
 library('googleVis')
 library('plotly')
+library('forecast')
 
 # Data
 data("iris")
@@ -11,18 +12,45 @@ data("Fruits")
 # Point data from Dubai Marina
 df <-
   read.table("www/data/datosBuildingsXYZ.csv", header = TRUE, sep = ",")
+  
+# Data for Time-Series Forecast
+
+timese <- ts(WWWusage, start= c(2008,1), end= c(2016,1), frequency=12)
+fit <- StructTS(timese,"trend")
+fit2 <- StructTS(timese,"level")
 
 # Shiny Server
 shinyServer(function(input, output) {
   
   # Index1 - Time Series
-  output$plot1 <- renderGvis({
-    gvisBubbleChart(
-      Fruits, idvar = "Fruit", xvar = "Sales", yvar = "Expenses", sizevar = "Profit", options =
-        list(colorAxis = "{colors: ['lightblue', 'blue']}")
-    )
+  
+ output$plot1 <- renderPlot({
     
-  })
+    if(input$select=="Trend")
+    
+    plot(forecast(fit, #Confidence Interval %
+                  level = c(input$range)),
+         sub= "Confidence Interval 70% ~ 90% or Determined by user", 
+         ylab= "Y Axis Variable",
+         main= "Forecast Linear Structural Model @ Trend-Wise",
+         ylim = c(0,400))
+    
+    else
+      
+      plot(forecast(fit2,
+                    
+                    #Confidence Interval %
+                    
+                    level = c(input$range)),
+sub= "Confidence Interval 70% ~ 90%
+           or Determined by user",
+
+ylab= "Y Axis Variable",
+
+main="Forecast Linear Structural Model @ Level-Wise",
+           ylim = c(0,400))
+           
+           })
   
   # Index2 - Heatmap
   output$divHtml <- renderUI({
