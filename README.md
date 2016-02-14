@@ -23,6 +23,7 @@ library('shiny')
 library('ggplot2')
 library('googleVis')
 library('plotly')
+library('forecast')
 ```
 
 To install the requiered packages you can execute in R:
@@ -32,6 +33,7 @@ install.packages('shiny')
 install.packages('ggplot2')
 install.packages('googleVis')
 install.packages('plotly')
+install.packages('forecast')
 ```
 
 #### Quickstart:
