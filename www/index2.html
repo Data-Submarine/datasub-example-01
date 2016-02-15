@@ -233,7 +233,7 @@
 
             <div class="form-group shiny-input-container">
               <label class="control-label" for="radius">Point radius</label>
-              <input class="js-range-slider" id="radius" data-min="50" data-max="150" data-from="80" data-step="10" data-grid="false" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="2.04081632653061" data-drag-interval="true"
+              <input class="js-range-slider" id="radius" data-min="10" data-max="100" data-from="60" data-step="10" data-grid="false" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="2.04081632653061" data-drag-interval="true"
                 data-data-type="number" />
             </div>
 
@@ -251,12 +251,13 @@
           <hr/>
 
           <div id="map"></div>
-
+          <script src="js/leaflet-functions.js"></script>
+<!--
           <script>
           var map = L.map('map').setView([25.0779, 55.1386], 14);
           var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);
           </script>
-
+-->
           <div id="divHtml" class="shiny-html-output"></div>
 
         </div>

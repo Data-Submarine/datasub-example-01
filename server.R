@@ -67,8 +67,7 @@ shinyServer(function(input, output) {
           "<script>",
           sprintf("var addressPoints = %s;", j),
           "addressPoints = addressPoints.map(function(p) {
-          return [p[0], p[1]];
-  });
+          return [p[0], p[1]];});
           if(map.hasLayer(heat)) {
           map.removeLayer(heat);  
                                 };
