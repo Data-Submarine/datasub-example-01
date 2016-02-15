@@ -50,6 +50,8 @@ shinyServer(function(input, output) {
     radius <- input$radius
     colorGradient <- input$color
     opacity <- input$opacity
+    blur <- input$blur
+    
     
     dfSubset <-
       subset(x = df, year == input$years, select = c("lon", "lat", "value"))
@@ -62,16 +64,17 @@ shinyServer(function(input, output) {
     mapa <-
       HTML(
         paste(
-          "
-          <div id='map'></div>
-          <script>
-          var map = L.map('map').setView([25.0779, 55.1386], 14);
-          var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);",
+          "<script>",
           sprintf("var addressPoints = %s;", j),
           "addressPoints = addressPoints.map(function(p) {
           return [p[0], p[1]];
   });
-          var heat = L.heatLayer(addressPoints, {minOpacity:", opacity,", radius:", radius, colorGradient, "}).addTo(map);
+          if(map.hasLayer(heat)) {
+          map.removeLayer(heat);  
+                                };
+
+          var heat = L.heatLayer(addressPoints, {minOpacity:", opacity,", radius:", radius, colorGradient, ", blur:", blur,"}).addTo(map);
+          
           </script>"
         ), sep = ""
       )

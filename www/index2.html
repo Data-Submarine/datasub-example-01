@@ -236,13 +236,29 @@
               <input class="js-range-slider" id="radius" data-min="50" data-max="150" data-from="80" data-step="10" data-grid="false" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="2.04081632653061" data-drag-interval="true"
                 data-data-type="number" />
             </div>
+
+            <div class="form-group shiny-input-container">
+              <label class="control-label" for="blur">Blur</label>
+              <input class="js-range-slider" id="blur" data-min="1" data-max="30" data-from="15" data-step="1" data-grid="false" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="2.04081632653061" data-drag-interval="true"
+                data-data-type="number" />
+            </div>
+
           </div>
         </div>
         <div class="main col-lg-10">
           <h3>Dubai Marina, UAE.</h3>
           <h4>Simulated data from apartment and house prices on Dubai Marina from 2010 to 2016. </h4>
           <hr/>
+
+          <div id="map"></div>
+
+          <script>
+          var map = L.map('map').setView([25.0779, 55.1386], 14);
+          var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);
+          </script>
+
           <div id="divHtml" class="shiny-html-output"></div>
+
         </div>
       </div>
     </div>
