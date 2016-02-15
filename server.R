@@ -73,7 +73,6 @@ shinyServer(function(input, output) {
                                 };
 
           var heat = L.heatLayer(addressPoints, {minOpacity:", opacity,", radius:", radius, colorGradient, ", blur:", blur,"}).addTo(map);
-          
           </script>"
         ), sep = ""
       )
