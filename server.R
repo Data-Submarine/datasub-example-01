@@ -52,7 +52,6 @@ shinyServer(function(input, output) {
     opacity <- input$opacity
     blur <- input$blur
     
-    
     dfSubset <-
       subset(x = df, year == input$years, select = c("lon", "lat", "value"))
     
