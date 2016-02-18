@@ -51,7 +51,7 @@ queryJumeirahLakesTowers <- which(buildingscoords$zone == "Jumeirah Lakes Towers
 
 for(i in 1:7) {
   
-  buildingscoords[queryJumeirahLakesTowers, i + 4] <- buildingscoords[queryJumeirahLakesTowers, i + 3] + buildingscoords[queryJumeirahLakesTowers, i + 3] * rnorm(n = rowsJumeirahLakesTowers, mean = 4, sd = 0.33)/100
+  buildingscoords[queryJumeirahLakesTowers, i + 4] <- buildingscoords[queryJumeirahLakesTowers, i + 3] - buildingscoords[queryJumeirahLakesTowers, i + 3] * rnorm(n = rowsJumeirahLakesTowers, mean = 4, sd = 0.33)/100
   
 }
 

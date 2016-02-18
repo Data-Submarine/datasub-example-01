@@ -48,13 +48,16 @@ shinyServer(function(input, output) {
   # Index2 - Heatmap
   
   output$divHtml <- renderUI({
+    
     radius <- input$radius
     colorGradient <- input$color
     opacity <- input$opacity
     blur <- input$blur
-    year <- input$years
-    
-    dfSubset <- subset(x = df, year == year, select = c("lon", "lat", "rateValue"))
+    rate <- input$valueRate/100
+
+    dfSubset <- subset(x = df, year == input$years & rateValue >= rate[1] & rateValue <= rate[2], select = c("lon", "lat", "rateValue"))
+
+    print(nrow(dfSubset))
     
     j <- paste0("[", dfSubset[, "lat"], ",", dfSubset[, "lon"], ",", dfSubset[, "rateValue"], "]", collapse = ",")
     j <- paste0("[", j, "]")
