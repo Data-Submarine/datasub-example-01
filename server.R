@@ -11,7 +11,7 @@ data("Fruits")
 
 # Point data from Dubai Marina
 df <-
-  read.table("www/data/datosBuildingsXYZ.csv", header = TRUE, sep = ",")
+  read.table("www/data/heatmapDataSimulatedExample.csv", header = TRUE, sep = ",")
 
 # Data for Time-Series Forecast
 timese <-
@@ -46,32 +46,31 @@ shinyServer(function(input, output) {
   })
   
   # Index2 - Heatmap
+  
   output$divHtml <- renderUI({
     radius <- input$radius
     colorGradient <- input$color
     opacity <- input$opacity
     blur <- input$blur
+    year <- input$years
     
-    dfSubset <-
-      subset(x = df, year == input$years, select = c("lon", "lat", "value"))
+    dfSubset <- subset(x = df, year == year, select = c("lon", "lat", "rateValue"))
     
-    j <-
-      paste0("[",dfSubset[,"lat"], ",", dfSubset[,"lon"], ",", dfSubset[,"value"], "]", collapse =
-               ",")
-    j <- paste0("[",j,"]")
+    j <- paste0("[", dfSubset[, "lat"], ",", dfSubset[, "lon"], ",", dfSubset[, "rateValue"], "]", collapse = ",")
+    j <- paste0("[", j, "]")
     
     mapa <-
       HTML(
         paste(
           "<script>",
-          sprintf("var addressPoints = %s;", j),
-          "addressPoints = addressPoints.map(function(p) {
+          sprintf("var buildingsCoords = %s;", j),
+          "buildingsCoords = buildingsCoords.map(function(p) {
           return [p[0], p[1]];});
           if(map.hasLayer(heat)) {
           map.removeLayer(heat);  
                                 };
 
-          var heat = L.heatLayer(addressPoints, {minOpacity:", opacity,", radius:", radius, colorGradient, ", blur:", blur,"}).addTo(map);
+          var heat = L.heatLayer(buildingsCoords, {minOpacity:", opacity,", radius:", radius, colorGradient, ", blur:", blur,"}).addTo(map);
           </script>"
         ), sep = ""
       )
