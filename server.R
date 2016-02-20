@@ -1,5 +1,6 @@
 # Libraries
 library('shiny')
+library('shinydashboard')
 library('ggplot2')
 library('googleVis')
 library('plotly')
@@ -100,18 +101,39 @@ shinyServer(function(input, output) {
     
   })
   
-  # Index4
-  output$plot4 <- renderPlotly({
-    # size of the bins depend on the input 'bins'
-    size <- input$bins3
+  # Index4 Shiny DASH
+    output$messageMenu <- renderMenu({
+    # Code to generate each of the messageItems here, in a list. messageData
+    # is a data frame with two columns, 'from' and 'message'.
+    # Also add on slider value to the message content, so that messages update.
+    msgs <- apply(messageData, 1, function(row) {
+      
+      messageItem(
+        
+        from = row[["from"]],
+        
+        message = paste(row[["message"]], input$text)
+        
+        
+      )
+    })
     
-    gg <- ggplot(iris, aes(x = Petal.Width)) +
-      geom_histogram(aes(y = ..density.., fill = Petal.Length), bins = size)
+    dropdownMenu(type = "messages", .list = msgs)
+  })
+  
+  output$plot1 <- renderPlot({
+    hist(rnorm(input$slider), main = "Data Submarine test dashboard #01")
+  })
+  
+  output$infoBox <- renderInfoBox({
     
-    # Convert the ggplot to a plotly
-    p <- ggplotly(gg)
-    p
+    infoBox(
+      "Progress", paste0(25 + input$slider, "%"), icon = icon("list"),
+      color = "purple"
+    )
+    
     
   })
+  
   
 })
