@@ -22,6 +22,19 @@ timese <-
 fit <- StructTS(timese, "trend")
 fit2 <- StructTS(timese, "level")
 
+#Data for shiny dash
+
+messageData <- 
+data.frame(
+  from = c("Data Submarine", "New User", "Support"),
+  message = c(
+    "Welcome to the interactive dashboard!",
+    "How do I register?",
+    "Ideal server conditions."
+  ),
+  stringsAsFactors = FALSE
+)
+
 # Shiny Server
 shinyServer(function(input, output) {
   
