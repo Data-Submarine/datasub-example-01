@@ -10,6 +10,7 @@ library('AnomalyDetection')
 # Data
 data("iris")
 data("Fruits")
+data("raw_data")
 
 # Point data from Dubai Marina
 df <- read.table("www/data/heatmapDataSimulatedExample.csv", header = TRUE, sep = ",")
@@ -119,9 +120,10 @@ shinyServer(function(input, output) {
     
   })
   
-  
   output$plot4b <- renderPlot({
     
+    res = AnomalyDetectionTs(raw_data, max_anoms = 0.02, direction = 'both', plot = TRUE)
+    res$plot
     
   })
   
