@@ -20,10 +20,12 @@ R packages dependencies
 
 ```R
 library('shiny')
+library('shinydashboard')
 library('ggplot2')
 library('googleVis')
 library('plotly')
 library('forecast')
+library('AnomalyDetection')
 ```
 
 To install the requiered packages you can execute in R:
@@ -34,6 +36,7 @@ install.packages('ggplot2')
 install.packages('googleVis')
 install.packages('plotly')
 install.packages('forecast')
+devtools::install_github('twitter/AnomalyDetection')
 ```
 
 #### Quickstart:
