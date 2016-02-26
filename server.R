@@ -5,6 +5,7 @@ library('ggplot2')
 library('googleVis')
 library('plotly')
 library('forecast')
+library('AnomalyDetection')
 
 # Data
 data("iris")
@@ -115,6 +116,12 @@ shinyServer(function(input, output) {
     # Convert the ggplot to a plotly
     p <- ggplotly(gg)
     p
+    
+  })
+  
+  
+  output$plot4b <- renderPlot({
+    
     
   })
   

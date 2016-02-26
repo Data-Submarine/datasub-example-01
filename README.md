@@ -36,6 +36,7 @@ install.packages('ggplot2')
 install.packages('googleVis')
 install.packages('plotly')
 install.packages('forecast')
+install.packages('devtools')
 devtools::install_github('twitter/AnomalyDetection')
 ```
 
