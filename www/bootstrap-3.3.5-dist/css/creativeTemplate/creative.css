@@ -31,6 +31,13 @@ a {
     transition: all .35s;
 }
 
+#logo {
+    
+    padding: 10px;
+    width: 20%;
+    
+}
+
 a:hover,
 a:focus {
   color: #26ab92;
